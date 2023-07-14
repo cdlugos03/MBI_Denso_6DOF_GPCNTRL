@@ -32,7 +32,18 @@ This Library is used to connect and communicate with A Denso RC8 controller.
 Used to translate inputs from the Xbox controller to readable, mappable movements the robot can take.
 
 # Connection With RC8 and Controller
+    host = "192.168.0.1"
+    port = 5007
+    timeout = 2000
+•Host = Controller IP
 
+•Port = RC port number
+
+•timeout = allotted time for controller PC communication
+
+
+# Basic Movement Functions
+        
     def move_robot()
 This function will take the robot's current position and adjusts the robot's XY and Z positioning based on the Xbox controller's left joystick position
 
