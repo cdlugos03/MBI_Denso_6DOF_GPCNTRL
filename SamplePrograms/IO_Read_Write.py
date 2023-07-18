@@ -1,7 +1,13 @@
-# -*- coding:utf-8 -*-
+# This program will read and write a variety of inputs and outputs on the robot controller
+# First the program will establish connection between the PC and the controller then
+# it will eztend a ticket to obtain IO128 using m_bcapclient.controller_getvariable(hCtrl, "IO128", "")
+# after it will read the value by using retIO = m_bcapclient.variable_getvalue(IOHandl) then it will change the current io state to
+#its opposite value by using 
+#newval = not(retIO)
+#write value of IO[128]
+#m_bcapclient.variable_putvalue(IOHandl, newval)
 
-# Sample program
-# read and write value of IO using b-cap
+#this process is repeatable and can be done on large scale using for loops
 
 # b-cap Lib URL
 # https://github.com/DENSORobot/orin_bcap
