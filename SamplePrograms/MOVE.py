@@ -1,13 +1,13 @@
-# -*- coding:utf-8 -*-
-
-# Send "Move" command to RC8
+#This Program will move the robot to position 1, 2, 3, and 4 in that order
+#this will be done by first connecting the robot controller and the computer then
+# it will execute movement using bcapclients robot_move function
 
 #b-cap Lib URL 
 # https://github.com/DENSORobot/orin_bcap
 
 import bcapclient
 
-### set IP Address , Port number and Timeout of connected RC8
+### Set IP Address , Port number, and Timeout of connected RC8
 host = "192.168.0.1"
 port = 5007
 timeout = 2000
@@ -77,6 +77,7 @@ while running:
     print("Complete Move P,@0 P[4]")
 
 '''
+#Point Position Movement
 position_Value = [210.0,0.0,260.0,180.0,0.0,180.0,261]
 Pose = [position_Value,"P","@E"]
 m_bcapclient.robot_move(HRobot,Comp,Pose,"")
