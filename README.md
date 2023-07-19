@@ -42,7 +42,7 @@ Used to translate inputs from the Xbox controller to readable, mappable movement
 •timeout = allotted time for controller PC communication
 
 
-# Basic Movement Functions
+# Basic Functions
         
     def move_robot()
 This function will take the robot's current position and adjusts the robot's XY and Z positioning based on the Xbox controller's left joystick position
@@ -55,6 +55,17 @@ the getpos function will communicate with the robot controller to determine the 
     def check_z
     def check_neg_y
 These functions are necessary if the robot is in an enclosed location. Use a teach pendant to determine the robot's maximum travel distance before stopping and resetting. The architecture of all of these functions is the same. While the robot is in movement it constantly compares the coordinates of its current position to the coordinates of the pre-determined maximum distance it can travel before stopping. Once stopped you are prompted with an error for 3 seconds then you can recover the robot by pressing A on the controller. This will send the robot back perpendicularly a predetermined distance away from the stopped location. 
+
+    def bcapconnect()
+Automatically sends Service start packet for connection, creates a robot and controller variable. This can all be done by calling this function at the beginning of the program. 
+
+    def motor on()
+    def motor off()
+sends a request to turn the motors on or off depending on what function you use. This is needed to immediately stop the robot in case of a fault or to prep the robot for incoming input or to start a task. 
+
+    def jstckinit()
+This function allows the Xbox controller to be used in the program by first initializing it and appending it to a joystick list.
+
 
 
 
