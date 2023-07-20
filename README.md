@@ -23,7 +23,7 @@ The required Libraries for this project are as follows:
 
 •bcapclient: https://github.com/DENSORobot/orin_bcap/tree/master/Python/bCAPClient
     
-    Add to Program Library in IDE
+    Add folder to Program Library in IDE
 
 *BCAPCLIENT*
 This Library is used to connect and communicate with A Denso RC8 controller.
