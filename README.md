@@ -3,7 +3,7 @@ This repository Dives into the control of a Denso 6 DOF Robot using Python-3, Mo
 
 # Setup
 You Will need a PC, Ethernet Cable, RC8 Robot controller, and a Denso Robot. Any Python IDE will work but I recommend
-Microsofts Visual Studio Code.
+Microsoft's Visual Studio Code.
 
 The Basic Connection Code is as Follows
 
@@ -45,7 +45,7 @@ The Basic Connection Code is as Follows
     m_bcapclient.robot_execute(HRobot,Command,Param)
     print("Motor On")
 
-After this connection program is written in your code, you will be able to use different types of bcap excecutables for controlling the robot and controller
+After this connection program is written in your code, you will be able to use different types of bcap executables for controlling the robot and controller
 
 If there are any questions email coopersd036@gmail.com
 
