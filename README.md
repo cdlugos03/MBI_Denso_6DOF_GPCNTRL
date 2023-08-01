@@ -7,42 +7,45 @@ Microsofts Visual Studio Code.
 
 The Basic Connection Code is as Follows
 
+    #Change IP, Host, and Port as needed
     host = "192.168.0.1"
     port = 5007
     timeout = 2000
     
-    ### Connection processing of tcp communication
+    #Connection processing of tcp communication
     m_bcapclient = bcapclient.BCAPClient(host,port,timeout)
     print("Open Connection")
     
-    ### start b_cap Service
+    #start b_cap Service
     m_bcapclient.service_start("")
     print("Send SERVICE_START packet")
     
-    ### set Parameter
+    #set Parameter
     Name = ""
     Provider="CaoProv.DENSO.VRC"
     Machine = ("localhost")
     Option = ("")
     
-    ### Connect to RC8 (RC8(VRC)provider)
+    #Connect to RC8 (RC8(VRC)provider)
     hCtrl = m_bcapclient.controller_connect(Name,Provider,Machine,Option)
     print("Connect RC8")
-    ### get Robot Object Handl
+    #get Robot Object Handl
     HRobot = m_bcapclient.controller_getrobot(hCtrl,"Arm","")
     print("AddRobot")
     
-    ### TakeArm
+    #TakeArm
     Command = "TakeArm"
     Param = [0,0]
     m_bcapclient.robot_execute(HRobot,Command,Param)
     print("TakeArm")
     
-    ###Motor On
+    #Motor On
     Command = "Motor"
     Param = [1,0]
     m_bcapclient.robot_execute(HRobot,Command,Param)
     print("Motor On")
+
+After this connection program is written in your code, you will be able to use different types of bcap excecutables for controlling the robot and controller
 
 If there are any questions email coopersd036@gmail.com
 
