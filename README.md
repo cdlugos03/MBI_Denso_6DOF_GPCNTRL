@@ -1,6 +1,49 @@
 # MBI_Denso_6DOF_GPCNTRL
 This repository Dives into the control of a Denso 6 DOF Robot using Python-3
 
+# Setup
+You Will need a PC, Ethernet Cable, RC8 Robot controller, and a Denso Robot. Any Python IDE will work but I recommend
+Microsofts Visual Studio Code.
+
+The Basic Connection Code is as Follows
+
+    host = "192.168.0.1"
+    port = 5007
+    timeout = 2000
+    
+    ### Connection processing of tcp communication
+    m_bcapclient = bcapclient.BCAPClient(host,port,timeout)
+    print("Open Connection")
+    
+    ### start b_cap Service
+    m_bcapclient.service_start("")
+    print("Send SERVICE_START packet")
+    
+    ### set Parameter
+    Name = ""
+    Provider="CaoProv.DENSO.VRC"
+    Machine = ("localhost")
+    Option = ("")
+    
+    ### Connect to RC8 (RC8(VRC)provider)
+    hCtrl = m_bcapclient.controller_connect(Name,Provider,Machine,Option)
+    print("Connect RC8")
+    ### get Robot Object Handl
+    HRobot = m_bcapclient.controller_getrobot(hCtrl,"Arm","")
+    print("AddRobot")
+    
+    ### TakeArm
+    Command = "TakeArm"
+    Param = [0,0]
+    m_bcapclient.robot_execute(HRobot,Command,Param)
+    print("TakeArm")
+    
+    ###Motor On
+    Command = "Motor"
+    Param = [1,0]
+    m_bcapclient.robot_execute(HRobot,Command,Param)
+    print("Motor On")
+
 If there are any questions email coopersd036@gmail.com
 
 # Libraries
