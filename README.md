@@ -1,5 +1,5 @@
 # MBI_Denso_6DOF_GPCNTRL
-This repository Dives into the control of a Denso 6 DOF Robot using Python-3
+This repository Dives into the control of a Denso 6 DOF Robot using Python-3, More information is shown in the b-Cap_Guide_RC_en.pdf file below
 
 # Setup
 You Will need a PC, Ethernet Cable, RC8 Robot controller, and a Denso Robot. Any Python IDE will work but I recommend
